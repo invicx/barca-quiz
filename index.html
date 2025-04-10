@@ -1,27 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Who's the best club?</title>
+  <meta charset="UTF-8">
+  <title>Barça Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    input[type="text"] {
+      padding: 8px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-left: 8px;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <h2>Which club is the best?</h2>
-  <input type="text" id="answer" placeholder="Your answer here">
+
+  <h1>Which club is the best?</h1>
+  <input type="text" id="answer" placeholder="Type your answer here">
   <button onclick="checkAnswer()">Submit</button>
+
   <p id="result"></p>
 
   <script>
     function checkAnswer() {
-      const input = document.getElementById("answer").value.toLowerCase();
+      const answer = document.getElementById("answer").value.toLowerCase();
       const result = document.getElementById("result");
 
-      if (input === "barcelona" || input === "barça" || input === "barca") {
+      if (answer === "barcelona" || answer === "barça" || answer === "fc barcelona" || answer === "barca" || answer === "fcb") {
         result.textContent = "Correct! Visca el Barça!";
-      } else if (input === "real madrid" || input === "madrid" || input === "realmadrid") {
-        result.textContent = "You mean VARdrid? The crown club that robs everyone? The crybaby Vini club? The 'if Mbappé lands Madrid ahhh' BS? Nope lol 💀";
+        result.style.color = "#007BFF";
+      } else if (answer === "madrid" || answer === "real madrid" || answer === "VAR") {
+        result.innerHTML = "You mean <b>VARdrid</b>? The crown club that robs everyone? The crybaby Vini club? The 'if Mbappé lands Madrid ahhh' BS? Nope lol 💀";
+        result.style.color = "#8B0000";
       } else {
         result.textContent = "Wrong. Try again.";
+        result.style.color = "black";
       }
     }
   </script>
+
 </body>
 </html>
