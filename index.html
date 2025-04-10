@@ -82,14 +82,14 @@
       const answer = document.getElementById("answer").value.toLowerCase();
       const result = document.getElementById("result");
 
-      if (answer === "barcelona" || answer === "barça" || answer === "fc barcelona") {
-        result.textContent = "Correct! Visca el Barça!";
+      if (answer === "barcelona" || answer === "catalans" || answer === "barca" || answer === "culers" || answer === "blaugrana" || answer === "fcb"|| answer === "fc barcelona") {
+        result.textContent = "Correct! The Greatest Club in the World. Join the right side. Visca el Barça!";
         result.style.color = "#10a37f";
-      } else if (answer === "madrid" || answer === "real madrid") {
+      } else if (answer === "madrid" || answer === "crybaby" || answer === "frauds"|| answer === "real madrid"|| answer === "vardrid") {
         result.innerHTML = "You mean <b>VARdrid</b>? The crown club that robs everyone? The crybaby Vini club? The 'if Mbappé lands Madrid ahhh' BS? Nope lol 💀";
         result.style.color = "#ef4444";
       } else {
-        result.textContent = "Wrong. Try again.";
+        result.textContent = "Wrong! Do better and don't insult yourself. Try again.";
         result.style.color = "#facc15";
       }
     }
