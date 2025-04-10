@@ -1,60 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Barça Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
+      background-color: #343541;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #444654;
       padding: 40px;
-      background-color: #f4f4f4;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
       text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
+
     h1 {
-      color: #333;
+      margin-bottom: 20px;
+      font-size: 24px;
+      font-weight: 600;
     }
+
     input[type="text"] {
-      padding: 8px;
+      padding: 10px;
+      width: 70%;
+      border-radius: 8px;
+      border: none;
+      outline: none;
       font-size: 16px;
+      margin-top: 10px;
     }
+
     button {
-      padding: 8px 12px;
-      font-size: 16px;
-      margin-left: 8px;
+      padding: 10px 16px;
+      margin-left: 10px;
+      background-color: #10a37f;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      font-size: 16px;
     }
+
+    button:hover {
+      background-color: #0e8c6d;
+    }
+
     #result {
-      margin-top: 20px;
+      margin-top: 24px;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
-
-  <h1>Which club is the best?</h1>
-  <input type="text" id="answer" placeholder="Type your answer here">
-  <button onclick="checkAnswer()">Submit</button>
-
-  <p id="result"></p>
+  <div class="container">
+    <h1>Which club is the best?</h1>
+    <input type="text" id="answer" placeholder="Type your answer here">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+  </div>
 
   <script>
     function checkAnswer() {
       const answer = document.getElementById("answer").value.toLowerCase();
       const result = document.getElementById("result");
 
-      if (answer === "barcelona" || answer === "barça" || answer === "fc barcelona" || answer === "barca" || answer === "fcb") {
+      if (answer === "barcelona" || answer === "barça" || answer === "fc barcelona") {
         result.textContent = "Correct! Visca el Barça!";
-        result.style.color = "#007BFF";
-      } else if (answer === "madrid" || answer === "real madrid" || answer === "VAR") {
+        result.style.color = "#10a37f";
+      } else if (answer === "madrid" || answer === "real madrid") {
         result.innerHTML = "You mean <b>VARdrid</b>? The crown club that robs everyone? The crybaby Vini club? The 'if Mbappé lands Madrid ahhh' BS? Nope lol 💀";
-        result.style.color = "#8B0000";
+        result.style.color = "#ef4444";
       } else {
         result.textContent = "Wrong. Try again.";
-        result.style.color = "black";
+        result.style.color = "#facc15";
       }
     }
   </script>
-
 </body>
 </html>
