@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Who's the best club?</title>
+</head>
+<body>
+  <h2>Which club is the best?</h2>
+  <input type="text" id="answer" placeholder="Your answer here">
+  <button onclick="checkAnswer()">Submit</button>
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.toLowerCase();
+      const result = document.getElementById("result");
+
+      if (input === "barcelona" || input === "barça" || input === "barca") {
+        result.textContent = "Correct! Visca el Barça!";
+      } else {
+        result.textContent = "Wrong. Try again.";
+      }
+    }
+  </script>
+</body>
+</html>
